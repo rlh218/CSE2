@@ -25,15 +25,21 @@ System.out.printf( "Enter a double and display the four digits to the right of t
     Scanner myScanner = new Scanner(System.in); //define a Scanner
     double num = myScanner.nextDouble(); //collect integer
     
-    int x = (int) num ;
-    double y = num - x ;
-    int digits = (int) (y*10000);
+    int x = (int) num ; //make num an integer and assign it to the variable x
+    double y = num - x ; //define variable y as num - x
+    int digits = (int) (y*10000); //declare variable
+    
+    // define variables individually 
+    // need to do individually to get 0's to appear
+    // %10 in order to get the last number before the decimal
+    // divide to get number you want there
     int value1 = (int)(digits/1000)%10;
     int value2 = (int)(digits/100)%10;
     int value3 = (int)(digits/10)%10;
     int value4 = (int)digits%10;
     
 System.out.println("The four digits are: " + value1+value2+value3+value4);
+
    //test/testtest
    
  } //end of main method
