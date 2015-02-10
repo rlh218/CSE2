@@ -30,8 +30,8 @@ public class BigMac{
             myScanner = new Scanner(System.in);
 
             //define variables/ input
-                int nBigMacs = myScanner.nextInt();
                 System.out.print("Enter the number of Big Macs (an integer > 0): ");
+                int nBigMacs = myScanner.nextInt();
                 System.out.print("Enter the cost per Big Mac as" + 
                     " a double (in the form xx.xx): ");
                 double bigMac$ = myScanner.nextDouble();
