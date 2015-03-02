@@ -92,7 +92,7 @@ Scanner myScanner = new Scanner (System.in);
             }
                 else{
                     System.out.println("You will not have enough cookies.");
-                    quantityCookies = ((nCPerPerson-(nCbuying/nPeople))*nPeople);
+                    //CHECKKK quantityCookies = ((nCPerPerson-(nCbuying/nPeople))*nPeople);
                     System.out.println("You need to buy at least " + quantityCookies + " more.");
                 }
             if(nCbuying%nPeople == 0){
