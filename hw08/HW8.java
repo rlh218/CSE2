@@ -22,29 +22,29 @@ import java.util.Random;
         
             System.out.println("Welcome to MG's adventure world. Now your journey begins. Good luck!");
             System.out.println("Please hit 'C' or 'c' to continue, anything else to quit-");
-            String input = getInput(scan, "Cc");
+            String input = getInput(scan, "Cc"); //ask user to decide if they want to continue or not
         
             System.out.println("You are in a dead valley.");
             System.out.println("Please hit 'C' or 'c' to continue, anything else to quit-");
-            input = getInput(scan, "Cc");
+            input = getInput(scan, "Cc");//ask user to decide if they want to continue or not
         
             System.out.println("You walked and walked and walked and you saw a cave!");
             
             cave();
             
             System.out.println("Please hit 'C' or 'c' to continue, anything else to quit-");
-            input = getInput(scan, "Cc");
+            input = getInput(scan, "Cc");//ask user to decide if they want to continue or not
         
             System.out.println("You entered a cave!");
             System.out.println("Please hit 'C' or 'c' to continue, anything else to quit-");
-            input = getInput(scan, "Cc");
+            input = getInput(scan, "Cc");//ask user to decide if they want to continue or not
         
             System.out.println("Unfortunately, you ran into a GIANT!");
             
             giant();
             
             System.out.println("Enter 'A' or 'a' to Attack, 'E' or 'E' to Escape, ANYTHING else is to YIELD");
-            input = getInput(scan, "AaEe", 10);
+            input = getInput(scan, "AaEe", 10); //ask user to decide if they want to attack or escape
         
             System.out.println("Congratulations! You SURVIVED! Get your REWARD!");
             System.out.println("There are three 3 tressure boxes in front of you! Enter the box number you want to open!");
