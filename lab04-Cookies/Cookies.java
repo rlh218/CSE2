@@ -99,7 +99,7 @@ public class Cookies{
     } //close if
     else{
         System.out.print("You will not have enough cookies. ");
-        numberNeeded=(numCookiesPerPerson-(numCookies/numPeople))*numPeople; //figure out how many more cookies are needed
+        numberNeeded=((numCookiesPerPerson*numPeople)-numCookies); //figure out how many more cookies are needed
         System.out.println("You need to buy at least " + numberNeeded + " more");
     } //close else
     
