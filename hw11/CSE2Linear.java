@@ -158,23 +158,23 @@ public class CSE2Linear{
 	}//close method
 	
 	public static int binarySearch(int array[], int key){
-		int floor = 0;
-		int ceiling = array.length - 1;
+		int base = 0;
+		int top = array.length - 1;
 		
 		int iterations = 1;
-		int pos = (int)(floor + ceiling)/2;
+		int num = (int)(base + top)/2;
 		
-		while ((array[pos] != key) && (floor <= ceiling)){
+		while ((array[num] != key) && (base <= top)){
 			iterations++;
-			if (array[pos] > key) {
-				ceiling = pos - 1;
+			if (array[num] > key) {
+				top = num - 1;
 			}//close if 
 			else {
-				floor = pos + 1;
+				base = num + 1;
 			}//close else
-			pos = (int)(floor + ceiling)/2;
+			num = (int)(base + top)/2;
 		}//close while loop
-		if (floor <= ceiling) {
+		if (base <= top) {
 			return iterations;
 		}//close if 
 		else {
