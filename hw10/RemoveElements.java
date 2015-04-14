@@ -49,7 +49,7 @@ public class RemoveElements{
 			System.out.println(out2);
 
 			System.out.print("Go again? Enter 'y' or 'Y', anything else to quit-");
-			answer = scan.next();
+			answer = scan.next(); //ask user for input
 		} while(answer.equals("Y") || answer.equals("y"));
 	} //close do-while loop
 
@@ -66,7 +66,7 @@ public class RemoveElements{
 	}//close method
 
 	public static int[] randomInput(){
-		Random rand = new Random();
+		Random rand = new Random(); //prompt program to generate random number
 
 		int num[] = new int[10];
 		for (int i = 0; i < 10; i++) {
@@ -129,7 +129,7 @@ public class RemoveElements{
 				num[index] = list[i];
 				index++;
 			    }//close else
-		}//close for
+		}//close for loop
 
 		return num;
 
