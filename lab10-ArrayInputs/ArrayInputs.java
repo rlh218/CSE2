@@ -15,69 +15,74 @@
 // run the program
 //      java ArrayInputs 
 
-import java.util.Scanner; //import scanner
+import java.util.Scanner;//import scanner
 import java.util.Random;
 
 public class ArrayInputs{
 	public static void main(String [] arg){
 
-		Scanner scan = new Scanner(System.in); //declare scanner
+		Scanner scan = new Scanner(System.in);//declare scanner
 
-        System.out.println("Please print out an integer for the size of an array: ");
-        System.out.println("Please enter a positive integer: ");
-        System.out.println("Sorry you didn't enter an integer.");
-        System.out.println("Sorry the number you entered is negative.");
-        System.out.println("Please enter 10 positive integers: ");
-        System.out.println("The array is: ");
+		System.out.print("Please enter the size of a one-dimensional array: ");
+		int size = scan.nextInt();
 
+		int num[] = new int[size];
 
+		int input = 0;
 
+		System.out.println("Fill array with integers:");
+		for (int i = 0; i < num.length; i++) {
+			while(true){
+				System.out.print("num["+i+"]: ");
+				input = checkInput();
+				if (input == -1) {
+					continue;
+				} //close if
+				else {
+					num[i] = input;
+					break;
+				}//close else
+			}//close while
+		}//close for
+	
+		String out = "The array is: ";
+		out += listArray(num);
+		System.out.println(out);
+	}//close method
 
-
-
-
-        //declare variables
-		int num[] = new int[10];
-		int newArray1[];
-		int newArray2[];
-		int index,target;
-		String answer = "";
-
-		do{
-			System.out.print("Random input 10 ints [0-9]");
-			num = randomInput(); //ask user for input
-			String out = "The original array is:";
-			out += listArray(num);
-			System.out.println(out);
-
-			System.out.print("Enter the index ");
-			index = scan.nextInt(); //ask user for input
-			newArray1 = delete(num,index);
-			String out1 = "The output array is ";
-			out1 += listArray(newArray1); //return a string of the form "{2, 3, -9}"  
-			System.out.println(out1);
-
-			System.out.print("Enter the target value ");
-			target = scan.nextInt(); //ask user for input
-			newArray2 = remove(num,target);
-			String out2 = "The output array is ";
-			out2 += listArray(newArray2); //return a string of the form "{2, 3, -9}"  
-			System.out.println(out2);
-
-			System.out.print("Go again? Enter 'y' or 'Y', anything else to quit-");
-			answer = scan.next(); //ask user for input
-		} while(answer.equals("Y") || answer.equals("y"));
-	} //close do-while loop
-
+	public static int checkInput(){
+		
+		Scanner scan = new Scanner(System.in);
+		
+		int input = 0;
+		
+		if (scan.hasNextInt()) {
+			input = scan.nextInt();
+			if (input > 0) {
+				return input;
+			}//close if 
+			else {
+				System.out.println("Error: Integer is not positive");
+				return -1;
+			}//close else
+		}//close if 
+		else {
+			System.out.println("Error: Input is not an integer");
+			return -1;
+		}//close else
+	}//close method
+	
 	public static String listArray(int num[]){
-		String out = "{";
-		for(int j=0; j<num.length; j++){
+		String out="{";
+		for(int j=0;j<num.length;j++){
 			if(j>0){
-				out += ", ";
-			} //close if statement
-			out += num[j];
-		}//close for loop
-		out += "} ";
+				out+=", ";
+			}//close if
+			out+=num[j];
+		}//close for
+		out+="} ";
 		return out;
 	}//close method
+	
+}//close public class
 

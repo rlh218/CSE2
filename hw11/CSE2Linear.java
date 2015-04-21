@@ -192,4 +192,5 @@ public class CSE2Linear{
 		}//close for
 		return (-1)*(iterations); //declare what the return will be
 	}//close method
+	
 }//close public class
