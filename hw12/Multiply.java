@@ -130,7 +130,7 @@ public class Multiply{
 			}//close else
 		}//close while
 
-		System.out.println("");//print out blank line
+		System.out.println();//print out blank line
 		
 		int[][] matrix1 = randomMatrix(width1, height1); //decalre array
 		
@@ -138,7 +138,7 @@ public class Multiply{
 		       
 		       printMatrix(matrix1);
 		
-		System.out.println("");//print out blank line
+		System.out.println();//print out blank line
 		
 		int[][] matrix2 = randomMatrix(width2, height2);//declare array
 		
@@ -146,7 +146,7 @@ public class Multiply{
 		
 		    printMatrix(matrix2);
 	
-		System.out.println("");//print out blank line
+		System.out.println();//print out blank line
 		
 		System.out.println("result (" + height1 + "x" + width2 + "): ");
 	
