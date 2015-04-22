@@ -50,12 +50,12 @@ public class Multiply{
 				System.out.print("Height: ");
 				if (scan.hasNextInt()) {
 					height1 = scan.nextInt(); //prompt user to enter value for height1
-					if (height1 > 0) {
-						break;
-					}//close if 
-					else {
+					if (height1 < 0) {
 						System.out.println("Must be a positive dimension.");
 						continue;
+					}//close if 
+					else {
+						break;
 					}//close else
 				}//close if 
 				else {
@@ -68,17 +68,17 @@ public class Multiply{
 				System.out.print("Width: ");
 				if (scan.hasNextInt()) {
 					width1 = scan.nextInt(); //prompt user to enter input value for width1
-					if (width1 > 0) {
-						break;
-					}//close if 
-					else {
+					if (width1 < 0) {
 						System.out.println("Must be a positive dimension.");
 						continue;
+					}//close if 
+					else {
+						break;
 					}//close else
 				}//close if 
 				else {
 					System.out.println("User must enter an integer.");
-					scan.next(); //prompt user to re-enter acceptable value
+						scan.next(); //prompt user to re-enter acceptable value
 				}//close else
 			}//close while
 			
@@ -89,17 +89,17 @@ public class Multiply{
 				System.out.print("Height: ");
 				if (scan.hasNextInt()) {
 					height2 = scan.nextInt();//prompt user to enter input value for height2
-					if (height2 > 0) {
-						break;
-					}//close if 
-					else {
+					if (height2 < 0) {
 						System.out.println("Must be a positive dimension.");
 						continue;
+					}//close if 
+					else {
+						break;
 					}//close else
 				}//close if 
 				else {
 					System.out.println("User must enter an integer.");
-					scan.next();//prompt user to re-enter valid value
+						scan.next();//prompt user to re-enter valid value
 				}//close else
 			}//close while
 			
@@ -107,26 +107,26 @@ public class Multiply{
 				System.out.print("Width: ");
 				if (scan.hasNextInt()) {
 					width2 = scan.nextInt();//prompt user to input value for width2
-					if (width2 > 0) {
-						break;
-					}//close if 
-					else {
+					if (width2 < 0) {
 						System.out.println("Must be a positive dimension.");
 						continue;
+					}//close if 
+					else {
+						break;
 					}//close else
 				}//close if  
 				else {
 					System.out.println("User must enter an integer.");
-					scan.next();//prompt user to re-enter valid value
+						scan.next();//prompt user to re-enter valid value
 				}//close else
 			}//close while
 			
-			if (width1 == height2) {
-				break;
-			}//close if 
-			else {
+			if (width1 != height2) {
 				System.out.println("Width of First Matrix must equal height of Second Matrix.");
 				continue;
+			}//close if 
+			else {
+				break;
 			}//close else
 		}//close while
 
@@ -156,16 +156,15 @@ public class Multiply{
 
 	}//close method
 
+
 	public static int[][] randomMatrix(int width, int height){ //declare method
 	
 		Random rand = new Random();
 	
-		int[][] array = new int[height][];//declare array
-
-		for (int x = 0; x < height; x++) {
-			array[x] = new int[width]; //switch value of array
-			for (int y = 0; y < width; y++) {
-				array[x][y] = rand.nextInt(20)-10;
+	    int array[][]=new int[height][width];
+    		for(int x=0; x<height; x++){
+    		for(int y=0; y<width; y++){
+            	array[x][y]=(int)((Math.random()*21)-10);
 			}//close for loop
 		}//close for loop
 		
@@ -182,7 +181,7 @@ public class Multiply{
 		for (int x = 0; x < height; x++) {
 			for (int y = 0; y < width; y++) {
 				int value = array[x][y];//define variable
-				String out = "[";
+				String out = "(x";
 				
 				if (value < 0) {
 					out += ("-");
@@ -194,7 +193,7 @@ public class Multiply{
 				if (value < 10) {
 					out += (" ");
 				}//close if
-				    out += (value + "]");
+				    out += (value + ")");
 				    System.out.print(out); //print "out" value
 			}//close for loop
 			
@@ -204,20 +203,19 @@ public class Multiply{
 	}//close method
 
 	public static int[][] matrixMultiply(int[][] array1, int[][] array2){
-
-        //declare variables
-		int height1 = array1.length;
-		int width1 = array1[0].length;
-
-		int height2 = array2.length;
-		int width2 = array2[0].length;
-
-		if (width1 != height2) {
-			System.out.println("Invalid multiplication matrix dimentions.");
+		
+		//declare variables
+		int height1=0;
+		int height2=0;
+		int width1=0;
+		int width2=0;
+		
+		if (array1[0].length != array2[0].length) {
+			System.out.println("Invalid matrix dimentions.");
 			return null;
 		}//close if 
 
-		int[][] result = new int[height1][];//declare array
+		int[][] result = new int[array1.length][array2[0].length];//declare array
 
 		for (int x = 0; x < height1; x++) { 
 			result[x] = new int[width2]; 
@@ -233,3 +231,4 @@ public class Multiply{
 	}//close method
 
 }//close public class
+
