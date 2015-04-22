@@ -184,7 +184,6 @@ public class Multiply{
 				String out = "(x";
 				
 				if (value < 0) {
-					out += ("-");
 					value *= -1;
 				}//close if  
 				else if(value < 100){
